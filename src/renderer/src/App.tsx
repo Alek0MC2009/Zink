@@ -1,3 +1,6 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable prettier/prettier */
 import { useState, useEffect, JSX } from 'react'
 import { SideBar } from './components/Sidebar'
 import { Toaster, toast } from 'react-hot-toast'
@@ -129,14 +132,14 @@ export default function App(): JSX.Element {
   }, [currentPath, isDirty])
 
   useEffect(() => {
-    if (isDirty) {
+    if (isDirty && currentPath) {
       const timeout = setTimeout(() => {
         handleSave()
       }, 2000)
 
       return () => clearTimeout(timeout)
     }
-  }, [content])
+  }, [content, isDirty, currentPath, handleSave])
   return (
     <div className="flex h-screen bg-zinc-950 text-zinc-300 overflow-hidden">
       {/* El Toaster debe estar aquí para que las notificaciones floten sobre la app */}

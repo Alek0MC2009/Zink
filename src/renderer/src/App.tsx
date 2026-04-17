@@ -152,7 +152,7 @@ export default function App(): JSX.Element {
               setIsDirty(true)
             }
           }}
-          placeholder="Notepad-true++"
+          placeholder="Zink starter text <3"
           spellCheck={false}
         />
       </main>
